@@ -1,6 +1,5 @@
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                      QUICK REFERENCE CHEAT SHEET                             ║
-║                       Database Management Evaluation                          ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 RUN COMMANDS
@@ -141,14 +140,6 @@ CONFIDENCE BOOSTERS
   ✓ You have concrete examples for everything
   ✓ You can discuss trade-offs intelligently
 
-BODY LANGUAGE TIPS
-════════════════════════════════════════════════════════════════════════════════
-  • Sit up straight, confident posture
-  • Make eye contact when speaking
-  • Use hand gestures to emphasize points
-  • Smile when discussing your work
-  • Pause before answering (shows thoughtfulness)
-
 IF YOU FORGET SOMETHING
 ════════════════════════════════════════════════════════════════════════════════
   "Let me pull up my code to show you exactly..." (totally fine!)
@@ -162,7 +153,3 @@ would help solve? I'm particularly interested in performance optimization and
 scaling strategies."
 
 (Shows: Interest in the role, willingness to help, awareness of real problems)
-
-═══════════════════════════════════════════════════════════════════════════════
-                         YOU'VE GOT THIS! 🚀
-═══════════════════════════════════════════════════════════════════════════════
