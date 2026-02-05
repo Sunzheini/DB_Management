@@ -1,9 +1,6 @@
 """
-Database Management Showcase Application
-Demonstrates 16 key database management competencies using SQLite
-
-Author: Middle-level Python Backend Engineer
-Purpose: Technical evaluation and advancement demonstration
+Database Management Showcase Application. Demonstrates 16 key database management
+competencies using SQLite.
 """
 
 import sqlite3
@@ -103,10 +100,11 @@ class DatabaseManager:
             """)
 
             conn.commit()
-            print("✓ Database structure created successfully")
+            print("Database structure created successfully")
 
     # REQ 8: Implement database techniques to safeguard sensitive data
-    def hash_password(self, password: str) -> str:
+    @staticmethod
+    def hash_password(password: str) -> str:
         """Hash passwords using SHA-256"""
         return hashlib.sha256(password.encode()).hexdigest()
 
@@ -197,7 +195,8 @@ class DatabaseManager:
             conn.commit()
             print(f"✓ Generated {num_users} users, {num_products} products, and 200 orders")
 
-    def _random_string(self, length: int) -> str:
+    @staticmethod
+    def _random_string(length: int) -> str:
         """Helper to generate random strings"""
         return ''.join(random.choices(string.ascii_lowercase, k=length))
 
@@ -348,7 +347,7 @@ class DatabaseManager:
             conn.commit()
             print("✓ Created view and temporary table")
 
-    # REQ 9: Use stored procedures (SQLite uses triggers, we'll demonstrate that)
+    # REQ 9: Use stored procedures (SQLite uses triggers)
     def create_triggers(self):
         """Create triggers to enhance operations, security, and performance"""
         with self.get_connection() as conn:
@@ -391,7 +390,13 @@ class DatabaseManager:
 
     # REQ 10: Wrap queries into transactions
     def process_order_transaction(self, user_id: int, items: List[Dict]) -> bool:
-        """Demonstrate ACID transaction with rollback capability"""
+        """Demonstrate ACID transaction with rollback capability.
+        ACID: Atomicity, Consistency, Isolation, Durability
+         - Atomicity: All operations succeed or none do
+         - Consistency: Database remains in a valid state
+         - Isolation: Concurrent transactions do not interfere
+         - Durability: Once committed, changes are permanent
+        """
         with self.get_connection() as conn:
             try:
                 conn.execute("BEGIN TRANSACTION")
@@ -594,7 +599,7 @@ class DatabaseManager:
         print(f"\nDatabase: {doc['database']}")
         print(f"Generated: {doc['generated_at']}")
 
-        print(f"\n📊 TABLES ({len(doc['tables'])})")
+        print(f"\nTABLES ({len(doc['tables'])})")
         print("-" * 80)
         for table_name, table_info in doc['tables'].items():
             print(f"\n  {table_name} ({table_info['row_count']} rows)")
@@ -603,7 +608,7 @@ class DatabaseManager:
                 nullable = "NULL" if col['nullable'] else "NOT NULL"
                 print(f"    - {col['name']}: {col['type']} {nullable}{pk}")
 
-        print(f"\n🔍 INDEXES ({len(doc['indexes'])})")
+        print(f"\nINDEXES ({len(doc['indexes'])})")
         print("-" * 80)
         for idx in doc['indexes']:
             print(f"  - {idx['name']} on {idx['table']}")
@@ -737,7 +742,7 @@ def run_demonstration():
 if __name__ == "__main__":
     db_manager = run_demonstration()
 
-    print("\n💡 EVALUATION TALKING POINTS:")
+    print("\nEVALUATION TALKING POINTS:")
     print("-" * 80)
     print("""
     1. SQL Mastery: Complex queries with JOINs, CTEs, aggregations, and subqueries
@@ -750,8 +755,5 @@ if __name__ == "__main__":
     8. Documentation: Automated schema documentation generation
     9. Testing: Comprehensive dummy data generation for realistic scenarios
     10. Best Practices: Context managers, error handling, and clean code structure
-    
-    This application demonstrates production-ready database management skills
-    suitable for mid-to-senior level backend engineering roles.
     """)
     print("-" * 80)
