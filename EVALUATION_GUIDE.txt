@@ -297,6 +297,3 @@ A: Slow query logs, EXPLAIN ANALYZE on problem queries, index usage stats,
    connection pool metrics, deadlock detection, disk I/O monitoring,
    automated alerts for anomalies.
 
-═══════════════════════════════════════════════════════════════════════════════
-
-Good luck with your evaluation! You've got this! 🚀
