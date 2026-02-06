@@ -100,7 +100,7 @@ class DatabaseManager:
             """)
 
             conn.commit()
-            print("Database structure created successfully")
+            print("Database structure created successfully!")
 
     # REQ 8: Implement database techniques to safeguard sensitive data
     @staticmethod
@@ -193,7 +193,7 @@ class DatabaseManager:
                 cursor.execute("UPDATE orders SET total_amount = ? WHERE id = ?", (total, order_id))
 
             conn.commit()
-            print(f"✓ Generated {num_users} users, {num_products} products, and 200 orders")
+            print(f"✓ Generated {num_users} users, {num_products} products, and 200 orders.")
 
     @staticmethod
     def _random_string(length: int) -> str:
